@@ -1,1 +1,6 @@
 c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\bin\Debug\Battleship.exe.config
+c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\bin\Debug\Battleship.exe
+c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\bin\Debug\Battleship.pdb
+c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\obj\Debug\Battleship.csprojResolveAssemblyReference.cache
+c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\obj\Debug\Battleship.exe
+c:\users\dques\documents\visual studio 2015\Projects\Battleship\Battleship\obj\Debug\Battleship.pdb

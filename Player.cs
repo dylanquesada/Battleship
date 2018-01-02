@@ -9,6 +9,7 @@ namespace Battleship
     class Player
     {
         // member variables
+        public string name;
         public List<Ship> ships = new List<Ship>() {
             new Ship("Destroyer", 2),
             new Ship("Submarine", 3),
@@ -76,25 +77,43 @@ namespace Battleship
             string direction;
             for (int i = 0; i < ships.Count(); i++)
             {
-                Console.WriteLine("Where would you like to place your {0}? Enter top left start coordinate. ex. 'A3'", ships[i]);
+                Console.WriteLine("Where would you like to place your {0}? Enter top left start coordinate. ex. 'A3'", ships[i].name);
                 selection = GetUserInput();
-                Console.WriteLine("Do you want your {0} horizontal or vertical?", ships[i]);
+                Console.WriteLine("Do you want your {0} horizontal or vertical?", ships[i].name);
                 direction = GetUserInput();
                 PlaceShip(selection, direction, ships[i]);
                 DisplayBoard(columns);
             }
+        }
 
+
+
+
+
+
+    public void PopulateBoard()
+        {
+            for(int i = 0; i < 20; i++)
+            {
+            List<char> list = new List<char>();
+                columns.Add(list);
+                for(int j = 0; j <= 20; j++)
+                {
+                    columns[i].Add('~');
+                }
+            }
         }
         public void DisplayBoard(List<List<char>> columns)
         {
             Console.WriteLine("A B C D E F G H I J K L M N O P Q R S T");
-            for (int i = 0; i <= columns.Count(); i++)
+            for (int i = 0; i < columns.Count(); i++)
             {
-                Console.WriteLine("{0}", i + 1);
-                for (int j = 0; j <= columns[i][j]; j++)
+                
+                for (int j = 0; j < 20; j++)
                 {
-                    Console.Write("{0}", columns[i][j]);
+                    Console.Write("{0} ", columns[i][j]);
                 }
+                Console.WriteLine("{0}", i + 1);
             }
         }
 

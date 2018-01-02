@@ -10,26 +10,33 @@ namespace Battleship
     {
 
         // member variables
+        public Player playerOne;
+        public Player playerTwo;
 
         // constructor
         public Game()
         {
-            //Board board = new Board();
+            Player playerOne = new Player();
+            Console.WriteLine("Enter player one's name:");
+            playerOne.name = GetUserInput();
+            Player playerTwo = new Player();
+            Console.WriteLine("Enter player two's name:");
+            playerTwo.name = GetUserInput();
+            playerTwo.PopulateBoard();
+            playerTwo.DisplayBoard(playerTwo.columns);
+            
         }
 
         // member methods 
-        
-        public void DisplayBoard(List<String> columns, List<String> rows)
+        public string GetUserInput()
         {
-            for (int i = 0; i <= columns.Count(); i++)
-            {
-                Console.WriteLine("{0}", i + 1);
-                for(int j = 0; j <= 20; j++)
-                {
-                    Console.Write("{0}", rows[j]);
-                }
-            }
+            return Console.ReadLine();
         }
+        public void RunGame()
+        {
+
+        }
+
 
     }
 }
