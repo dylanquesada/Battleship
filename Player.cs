@@ -22,13 +22,37 @@ namespace Battleship
         {
             return Console.ReadLine();
         }
+        public List<string> PlaceShip(string input, string direction)
+        {
+            return columns;
+        }
         public void SetBoard()
         {
             string selection;
+            string direction;
             for (int i = 0; i < ships.Count(); i++)
-            Console.WriteLine("Where would you like to place your{0}", ships[i]);
-            selection = GetUserInput();
+            {
+                Console.WriteLine("Where would you like to place your {0}? Enter top left start coordinate. ex. 'A3'", ships[i]);
+                selection = GetUserInput();
+                Console.WriteLine("Do you want your {0} horizontal or vertical?", ships[i]);
+                direction = GetUserInput();
+                PlaceShip(selection, direction);
+                DisplayBoard(columns);
+            }
+
         }
-        
+        public void DisplayBoard(List<String> columns)
+        {
+            Console.WriteLine("A B C D E F G H I J K L M N O P Q R S T");
+            for (int i = 0; i <= columns.Count(); i++)
+            {
+                Console.WriteLine("{0}", i + 1);
+                for (int j = 0; j <= columns[i][j]; j++)
+                {
+                    Console.Write("{0}", columns[i][j]);
+                }
+            }
+        }
+
     }
 }
