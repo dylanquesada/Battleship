@@ -9,14 +9,16 @@ namespace Battleship
     class Ship
     {
         // member variables
+        public string name;
+        public int size;
         bool sunk = false;
         int hits = 0;
 
         // constructor
-        public Ship()
+        public Ship(string Name, int Size)
         {
-            string name;
-            int size;
+            name = Name;
+            size = Size;
         }
 
         // member methods
