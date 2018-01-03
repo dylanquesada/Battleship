@@ -16,6 +16,7 @@ namespace Battleship
             new Ship("Battleship", 4),
             new Ship("Aircraft Carrier", 5) };
         public List<List<char>> columns = new List<List<char>>();
+        public int hitsTaken;
 
         // constructor
         public Player()
@@ -115,6 +116,35 @@ namespace Battleship
                 }
                 Console.WriteLine("{0}", i + 1);
             }
+        }
+
+        public List<List<char>> FireOnSquare(Player defendingPlayer, string position)
+        {
+            List<List<char>> columns = defendingPlayer.columns;
+            char counter = 'A';
+            int row;
+            char column;
+            column = position[0];
+            row = position[1];
+            for(int i = 0; i < columns.Count(); i++)
+            {
+                for(int j = 0; j < columns[i].Count(); j++)
+                {
+                    if(counter == column && j == row)
+                    {
+                        if (columns[i][j] == '~')
+                        {
+                            columns[i][j] = 'M';
+                        }
+                        else
+                        {
+                            columns[i][j] = '!';
+                        }
+                    }
+                }
+                counter++;
+            }
+            return columns;
         }
 
     }
